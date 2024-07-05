@@ -30,5 +30,5 @@
             ]
         }
     },
-    "postCreateCommand": "echo '# Writing code upon codespace creation!'  >> codespace.md"
+    "postCreateCommand": "curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash"
 }
