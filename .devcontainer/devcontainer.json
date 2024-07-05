@@ -1,23 +1,34 @@
 {
-    // Name this configuration
     "name": "Codespace for Skills!",
-    // Use the base codespace image
     "image": "mcr.microsoft.com/vscode/devcontainers/universal:latest",
-  
     "remoteUser": "codespace",
     "overrideCommand": false,
-     // Add the IDs of extensions you want installed when the container is created.
-     "customizations": {
-         "vscode": {
-             "extensions": [
-                 "GitHub.copilot"
-             ]
-         },
-         "codespaces": {
-             "openFiles": [
-                 "codespace.md"
-             ]
-         }
-     } ,
+    "features": {
+        // Enable Docker-in-Docker
+        "docker-in-docker": "latest",
+        // Install Python
+        "python": "latest",
+        // Install Node.js
+        "node": {
+            "version": "lts"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "GitHub.copilot",
+                "ms-python.python",
+                "dbaeumer.vscode-eslint",
+                "ms-azuretools.vscode-azurecli", // Azure CLI
+                "eg2.vscode-npm-script",
+                "ms-vscode.vscode-node-azure-pack" // Node.js and Azure extensions pack
+            ]
+        },
+        "codespaces": {
+            "openFiles": [
+                "codespace.md"
+            ]
+        }
+    },
     "postCreateCommand": "echo '# Writing code upon codespace creation!'  >> codespace.md"
 }
